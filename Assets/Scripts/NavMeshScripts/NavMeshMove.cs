@@ -1,12 +1,11 @@
-using System;
 using CallBack;
 using UnityEngine;
 
 namespace NavMeshScripts
 {
-    public class NavMeshManager : MonoBehaviour
+    public class NavMeshMove : MonoBehaviour
     {
-        public static NavMeshManager instance;
+        public static NavMeshMove instance;
         public NavMeshAgentWithCallback agent;
         public Transform target;
         private void Awake()
@@ -25,7 +24,6 @@ namespace NavMeshScripts
 
         private void Move()
         {
-            
             agent.SetDestination(target.position).OnPathComplete(Write);
         }
 
