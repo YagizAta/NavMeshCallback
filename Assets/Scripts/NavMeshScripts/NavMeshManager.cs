@@ -19,6 +19,13 @@ namespace NavMeshScripts
 
         void Start()
         {
+            Events.onTargetMove.AddListener(Move);
+            Move();
+        }
+
+        private void Move()
+        {
+            
             agent.SetDestination(target.position).OnPathComplete(Write);
         }
 

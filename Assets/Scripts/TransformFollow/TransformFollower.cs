@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class TransformFollower : MonoBehaviour
 {
-        public NavMeshAgentWithCallback agent;
+        //public NavMeshAgentWithCallback agent;
         private Vector3 firstPos;
 
         public float distChecker;
@@ -20,7 +20,8 @@ public class TransformFollower : MonoBehaviour
 
         private void MoveAgain()
         {
-            agent.SetDestination(transform.position).OnPathComplete(agent.OnCompleteAction);
+            Events.onTargetMove.Invoke();
+            //agent.SetDestination(transform.position).OnPathComplete(agent.OnCompleteAction);
         }
 
         private void CheckIfWeMove()
