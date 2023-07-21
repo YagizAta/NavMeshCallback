@@ -3,18 +3,12 @@ using UnityEngine;
 
 namespace NavMeshScripts
 {
-    public class NavMeshMove : MonoBehaviour
+    public class NavMeshChaser : MonoBehaviour
     {
-        public static NavMeshMove instance;
+        
         public NavMeshAgentWithCallback agent;
         public Transform target;
-        private void Awake()
-        {
-            if (!instance)
-            {
-                instance = this;
-            }
-        }
+       
 
         void Start()
         {
@@ -32,5 +26,6 @@ namespace NavMeshScripts
             Debug.Log("we are done");
             UnityEditor.EditorApplication.isPaused = true;
         }
+
     }
 }
